@@ -1,0 +1,122 @@
+<style>
+    #ng{
+        background-color: #EE4A62;
+        color:black;
+        height:100px;
+        width: 300px;
+        
+    }
+</style>
+    {% for temp in temp_list %}
+    <form method="post" action="{% url 'atten' %}" >
+        {% csrf_token %}
+    <div id="ng">
+
+    <label for="name">Name:</label>
+    <span>{{temp.sname}}</span><br><br>
+            <label for="reg_number">Register number:</label>
+            
+            <span name="reg_number">{{ temp.sreg }}</span><br><br>
+        </div>
+            
+        <input type="hidden" name="student_id" value="{{ temp.id }}">
+
+            <label for="hours_present1">Hours Present sub1:</label>
+            <input type="number" id="o1" step="0.01" name="p1" ><br><br>
+            <label style="margin-left: 5.5%;" for="a1">Absent:</label>
+            <input type="number"  id="a1" step="0.01" name="a1" value=1 ><br><br>
+            
+
+            <label for="hours_present2">Hours Present sub2:</label>
+            <input type="number" id="o1" step="0.01" name="p2" ><br><br>
+            <label style="margin-left: 5.5%;" for="a2">Absent:</label>
+            <input type="number" id="a2" step="0.01" name="a2" value=1 ><br><br>
+          
+
+            <label for="hours_present3">Hours Present sub3:</label>
+            <input type="number" id="o1" step="0.01" name="p3" ><br><br>
+            <label style="margin-left: 5.5%;" for="a3">Absent:</label>
+            <input type="number" step="0.01" id="a3" name="a3" value=1 ><br><br>
+           
+
+        <label for="hours_present4">Hours Present sub4:</label>
+        <input type="number" id="o1" step="0.01" name="p4" ><br><br>
+        <label style="margin-left: 5.5%;" for="a4">Absent:</label>
+        <input type="number" step="0.01" id="a4" name="a4" value=1 ><br><br>
+        
+
+        <label for="hours_present5">Hours Present sub5:</label>
+        <input type="number" id="o1" step="0.01" name="p5" ><br><br>
+        <label style="margin-left: 5.5%;" for="a5">Absent:</label>
+        <input type="number" step="0.01" id="a5" name="a5" value=1 ><br><br>
+       
+
+        <label for="hours_present6">Hours Present sub6:</label>
+        <input type="number" id="o1" step="0.01" name="p6" ><br><br>
+        <label style="margin-left: 5.5%;" for="a6">Absent:</label>
+        <input type='number' step="0.01" id="a6" name="a6" value=1 ><br><br>
+        
+
+        <label for="hours_present7">Hours Present sub7:</label>
+        <input type="number" id="o1" step="0.01" name="p7"><br><br>
+        <label style="margin-left: 5.5%;" for="a7">Absent:</label>
+        <input type="number" step="0.01" id="a7" name="a7" value=1 ><br><br>
+        
+        
+        <label for="hours_present8">Hours Present sub8:</label>
+        <input type="number" id="o1" step="0.01" name="p8" ><br><br>
+        <label style="margin-left: 5.5%;" for="a8">Absent:</label>
+        <input type="number" step="0.01" id="a8" name="a8" value=1 ><br>   <br>
+        
+        <br>
+        <input type="submit"value="Mark Attendence"><br>
+
+       <!-- <input type="submit"value="mark"><br>
+
+        <script>
+            function conv() {
+                console.log("conv function called");
+                var p1 = parseFloat(document.getElementById('p1').value);
+                var a1 = parseFloat(document.getElementById('a1').value);
+                var p2 = parseFloat(document.getElementById('p2').value);
+                var a2 = parseFloat(document.getElementById('a2').value);
+                var p3 = parseFloat(document.getElementById('p3').value);
+                var a3 = parseFloat(document.getElementById('a3').value);
+                var p4 = parseFloat(document.getElementById('p4').value);
+                var a4 = parseFloat(document.getElementById('a4').value);
+                var p5 = parseFloat(document.getElementById('p5').value);
+                var a5 = parseFloat(document.getElementById('a5').value);
+                var p6 = parseFloat(document.getElementById('p6').value);
+                var a6 = parseFloat(document.getElementById('a6').value);
+                var p7 = parseFloat(document.getElementById('p7').value);
+                var a7 = parseFloat(document.getElementById('a7').value);
+                var p8 = parseFloat(document.getElementById('p8').value);
+                var a8 = parseFloat(document.getElementById('a8').value);
+                var o1 = parseFloat(document.getElementById('o1').value);
+                var o2 = parseFloat(document.getElementById('o2').value);
+                var o3 = parseFloat(document.getElementById('o3').value);
+                var o4 = parseFloat(document.getElementById('o4').value);
+                var o5 = parseFloat(document.getElementById('o5').value);
+                var o6 = parseFloat(document.getElementById('o6').value);
+                var o7 = parseFloat(document.getElementById('o7').value);
+                var o8 = parseFloat(document.getElementById('o8').value);
+        
+                document.getElementById('p1').value = (((a1) / (a1 + o1) * 100) + parseFloat(temp.p1)) / 2;
+
+
+                document.getElementById('p2').value = (((a2) / (a2 + o2) * 100) + parseFloat(temp.p2)) / 2;
+                document.getElementById('p3').value = (((a3) / (a3 + o3) * 100) +parseFloat(temp.p3)) / 2;
+                document.getElementById('p4').value = (((a4) / (a4 + o4) * 100) + parseFloat(temp.p4))/ 2;
+                document.getElementById('p5').value = (((a5) / (a5 + o5) * 100) + parseFloat(temp.p5))/ 2;
+                document.getElementById('p6').value = (((a6) / (a6 + o6) * 100) +parseFloat(temp.p6)) / 2;
+                document.getElementById('p7').value = (((a7) / (a7 + o7) * 100) + parseFloat(temp.p7))/ 2;
+                document.getElementById('p8').value = (((a8) / (a8 + o8) * 100) +parseFloat(temp.p8)) / 2;
+            }
+        </script>
+        
+--></form>
+
+    {% endfor %}
+   
+
+    

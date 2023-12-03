@@ -1,0 +1,10 @@
+<form method="post" action="{% url 'adminteacher'%}">
+    {% csrf_token%}
+    <input type="submit" value="Add Teacher">
+    
+</form>
+<form method="post" action="{% url 'admnaddd'%}">
+    {% csrf_token%}
+    <input type="submit" value="Add student">
+    
+</form>

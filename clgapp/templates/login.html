@@ -1,0 +1,37 @@
+<style>
+    body{
+        background-color:rgb(60, 114, 189);
+        
+
+    }
+    #log{
+        background-color:rgb(19, 20, 20);
+        color:whitesmoke;
+        height:25%;
+        width:20%;
+        padding: 10px;
+        margin-left: 40%;
+        margin-top: 20%;
+        border-radius: 10px;
+    }
+    #s,#o{
+        color:black;
+        input-security:auto;
+    }
+    
+
+</style>
+<body>
+    
+<form id="log" method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <label style="margin-left: 16%;"  for="lname">Name:</label>
+    <input  autocomplete="off" id="S" type="text" name="lname" required>
+    <br>
+    <br>
+    <label for="lreg">Roll Number:</label>
+    <input   autocomplete="off" id='o' type="text" name="lreg" required>
+    <br>
+    <input style="margin-left:40%; margin-top:15%;" type="submit" value="Login">
+</form>
+</body>

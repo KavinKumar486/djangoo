@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Admin</title>
+</head>
+<body>
+
+<h2>Add Student</h2>
+
+<form method="post" action="{% url 'admnadd' %}">
+    {% csrf_token %}
+
+    <label for="sname">Name:</label>
+    <input type="text" name="sname" required><br>
+
+    <label for="sreg">Registration:</label>
+    <input type="number" name="sreg" required><br>
+
+    <label for="scourse">Course:</label>
+    <input type="text" name="scourse" required><br>
+
+  
+    <label for="sphn">Phone:</label>
+    <input type="number" name="sphn" required><br>
+
+    <label for="saddress">Address:</label>
+    <textarea name="saddress" rows="4" required></textarea><br>
+
+    <label for="semail">Email:</label>
+    <input type="email" name="semail" required><br>
+
+    <label for="admndate">Admission Date:</label>
+    <input type="date" name="admndate" required><br>
+
+    <label for="stc">TC:</label>
+    <input type="text" name="stc" required><br>
+
+    <label for="sfather">Father's Name:</label>
+    <input type="text" name="sfather" required><br>
+
+    <label for="smother">Mother's Name:</label>
+    <input type="text" name="smother" required><br>
+
+    <label for="sfphn">Father's Phone:</label>
+    <input type="number" name="sfphn" required><br>
+
+    <label for="sfoccupation">Father's Occupation:</label>
+    <input type="text" name="sfoccupation" required><br>
+
+    <label for="sfincome">Family Income:</label>
+    <input type="text" name="sfincome" required><br>
+
+    <label for="sdob">Date of Birth:</label>
+    <input type="text" name="sdob" required><br>
+
+    <label for="saadhar">Aadhar Number:</label>
+    <input type="number" name="saadhar" required><br>
+
+    <label for="sbld">Blood Group:</label>
+    <input type="text" name="sbld" required><br>
+
+    <input type="submit" value="Add Student">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+<form method="post" action="{% url 'teacheradd' %}">
+{% csrf_token %}
+<label for="tname" >Name:</label>
+<input name="tname" placeholder="Enter teacher name">
+<label for="tid" >Teacher Id:</label>
+<input name="tid" placeholder="Enter Teacher Id">
+<input type="submit" value="Add teacher">
+
+</form>

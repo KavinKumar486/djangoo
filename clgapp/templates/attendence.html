@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>TAble</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            min-height: 100vh;
+            background-color: azure;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        table,th,td{
+            padding: 1rem;
+
+
+        }
+        main.table{
+            width: 82vw;
+            height: 90vh;
+            background-color: #fff5;
+            backdrop-filter: blur(7px);
+            box-shadow: 0 0.4rem 0.8rem #0005;
+            border-radius:.8rem;
+            overflow: hidden;
+
+
+        }
+        .tableheader{
+            width: 100%;
+            height: 10%;
+            background-color: #fff4;
+            padding: 8rem 1rem;
+
+        }
+        .tablebody{
+            width: 95%;
+            max-height: calc(89%-0.8rem);
+            background-color: #fffb;
+            margin: .8rem auto;
+            border-radius: .6rem;
+            overflow:auto;
+        }
+        .tablebody::-webkit-scrollbar{
+            width: 0.5rem;
+            height: 0.5rem;
+        }
+        .tablebody::-webkit-scrollbar-thumb{
+           border-radius: .5rem;
+           background-color:#0004;
+           visibility: hidden;
+        }
+        .tablebody::-webkit-scrollbar-thumb{
+            visibility: visible;
+
+        }
+        table,th,td{
+            border-collapse: collapse;
+             
+        }
+         thead{
+            position:sticky;
+            top:0;
+            left: 0;
+            background-color: #fff9;
+
+        }
+         tbody tr:nth-child(even){
+            background-color:rgb(196, 182, 182);
+
+         }
+        table thead tr{
+            width:10%
+        }
+        table thead th{
+            width:9%
+        }
+        
+         tbody tr:hover{
+            background-color: #fff6;
+         }
+    </style>
+</head>
+<body>
+    <main class="table">
+        <section class="tableheader">
+            <h1 style="justify-content:center; margin-left: 30%; font-size:300%">Attendence</h1>
+        </section>
+        <section class="tablebody">
+            <table>
+                <thead>
+                    <tr>
+                        <th>RollNO</th>
+                        <th>Name</th>
+                        <th>DBMS</th>
+                        <th>BS</th>
+                        <th>DSAT</th>
+                        <th>DSA II</th>
+                        <th>OS</th>
+                        <th>DBMS Lab</th>
+                        <th>Web TECH</th>
+                        <th>DSA II LAB</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for a in a%}
+                    <tr>
+                        <td>{{a.sreg}}</td>
+                        <td>{{a.sname}}</td>
+                        <td>{{a.p1}}</td>
+                        <td>{{a.p2}}</td>
+                        <td>{{a.p3}}</td>
+                        <td>{{a.p4}}</td>
+                        <td>{{a.p5}}</td>
+                        <td>{{a.p6}}</td>
+                        <td>{{a.p7}}</td>
+                        <td>{{a.p8}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+</body>
+</html>

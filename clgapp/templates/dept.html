@@ -1,0 +1,10 @@
+<form method="post" action="{% url 'dept'%}">
+    {% csrf_token%}
+    <select name="dept" id="dept">
+        <option value = 'datascience'>DataScience</option>
+        <option value = 'softearesystems'>Software Systems</option>
+        <option value="aiml">AIML</option>
+        <option value="dcs">DCS</option>
+    </select>
+    <input type="submit" value="Enter">
+</form>

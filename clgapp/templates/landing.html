@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College portal</title>
+    <link rel = "icon" href = "https://www.facultyplus.com/wp-content/uploads/2018/12/CIT-Logo.png" type = "image/x-icon"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        #body {
+            background-color: rgb(204, 148, 111);
+            background: url('https://lh3.googleusercontent.com/p/AF1QipOEt0e9tHaK5Fw1V-34Axn6p5GMqd8XPPc8xp0=s1360-w1360-h1020') center no-repeat ;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-size: 1500px;
+            
+        }
+
+        #container {
+            text-align: center;
+            margin-top: 40px;
+            
+        }
+
+        .op {
+            background: url('https://www.facultyplus.com/wp-content/uploads/2018/12/CIT-Logo.png') center no-repeat;
+            height: 300px;
+            width: 300px;
+            margin-bottom: 20px; 
+        }
+
+        #si {
+            background-color:rgb(255, 251, 240);
+            height: 200px;
+            width: 150px;
+            padding: 5%;
+            padding-top: 10%;
+            border-radius: 10%;
+            z-index: 1;
+            margin-left: 24%;
+            box-shadow: 0px 0px 25px rgb(19, 18, 16);
+        }
+        nav.navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .navbar-brand img {
+            margin-right: 10px;
+        }
+
+        .navbar-brand h1 {
+            font-size: 200%;
+            margin: 0;
+        }
+        #fun{
+            padding-left: 22%;
+
+            
+        }
+        #title{
+            
+            display: inline-block;
+            
+
+        }
+        #red{
+            background-color: #37008E;
+            height: 275px;
+            width:45%;
+            margin-left: 9%;
+           
+           color:whitesmoke;
+
+            
+       
+            overflow: hidden;
+            position: relative;
+        }
+
+        h6, p {
+            margin: 0; 
+        }
+
+        .announcement-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: transform 0.5s ease-in-out;
+        }
+        #pink{
+            background-color: #FCD300;
+            margin-top:1%;
+            height: 275px;
+            width:45%;
+          
+            color:black ;
+            margin-left: 9%;
+        }
+        #blue{
+            background-color: #EE4A62;
+            color:whitesmoke;
+            
+            height: 275px;
+            width:45%;
+            margin-top:1%;
+            margin-left: 9%;
+        }
+        #color{
+            margin-top: 1%;
+            margin-left:27%;
+        }
+           
+        #mission{
+            background-color: aliceblue;
+            color:brown;
+            opacity: 0.6;
+            height:250px;
+            width:50%;
+            padding:25px;
+            margin-left:25%;
+        }
+        #re{
+            padding-left: 20%;
+            padding-top: 20%;
+        }
+        .overlay {
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            opacity: 0.8;
+            
+            display:none;
+        }
+        .popupbox {
+            background-color: black;
+            color:orangered;
+            height: 30%; 
+            width: 25%;
+            position: absolute;
+            top:26%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            display: none;
+            border-radius: 9px;
+            padding-top: 55px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div id="scriptt">
+    <div id="body">
+    <div class="overlay"></div>
+    
+    <nav id="navv" class="navbar navbar-expand-sm" style="background-color: blanchedalmond;">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <img src="https://www.facultyplus.com/wp-content/uploads/2018/12/CIT-Logo.png" height="45" width="35" alt="CIT Logo" style="padding-bottom: 10px;">
+                <h1 style="display: inline-block;color: #aa4c48;">CIT</h1>
+                <h6 id ="title" style="color:  #aa4c48 ;" >Coimbatore Institute Of Technology<br /></h6>
+                <p style="font-size: 50%;color:#aa4c48" id="fun">an autonomous institution affiliated to anna university</p>
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link"><h4>Alumni |</h4></a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about"><h4>About us  |</h4></a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="placement"><h4>Placements</h4></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="popupbox">
+        <form method='post' action="{% url 'admm' %}">
+            {% csrf_token%}
+            <input type='text' autocomplete="off" placeholder="Admin Name" style="margin-left:19%" name="admnname"><br /><br>
+           <input type="password" placeholder="password" style="margin-left:19%" name="admnpass"><br />
+            <input style="margin-left: 40%;margin-top:10%; border-radius:5px;" type="submit" value="login">
+        </form>
+    </div>
+    <div id="container">
+        <div class="op"></div>
+        <div id="si">
+                    <div class="w"> 
+                        <button class="btn btn-success" onclick="log()">ADMIN</button>
+                    </div>
+            <br>          
+            <form  action="{% url 'teacherauth' %}" id="tea">
+                <div class="w">
+                    <input class="btn btn-success" type="submit" value="TEACHER">
+                </div>
+            </form><br>
+            <form action="{% url 'login' %}" id="stu">
+                <div class="w"> 
+                    <input class="btn btn-success" type="submit" value="STUDENT">
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>
+<div id="color">
+<div id="red">
+    <h6 style="padding-left: 35px;">Announcenments</h6>
+    <div class="announcement-container">
+    <p id="re">Announcement-1</p>
+
+</div>
+</div>
+<div id="pink">
+    <h6 style="padding-left:35px;">Admission</h6>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, vel deleniti quos inventore aperiam assumenda pariatur earum corrupti cumque cum hic iusto dicta quasi odio, consequatur maiores numquam labore</p>
+</div>
+<div id="blue">
+    <h6 style="padding-left: 35px;">Fees Portal</h6>
+    <p id="fees">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, autem animi repellat incidunt magni at, nam quos impedit, aut numquam aspernatur dolores voluptatibus exercitationem? Nemo repellendus laborum itaque magni quasi.</p>
+</div>
+</div>
+<div id="abt">
+    <h1 style="opacity:0.8;">
+        Our Mission
+    </h1>
+    <p id="mission">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, laborum quo aperiam enim ad assumenda in libero inventore placeat beatae illo similique officiis molestiae repellendus veniam dignissimos porro ullam expedita nulla itaque, vel voluptate. Aperiam nemo accusamus doloremque excepturi repellat expedita provident necessitatibus rerum amet dolorum? Magni tempora pariatur corrupti facilis maxime sequi magnam officia numquam cum, provident perferendis possimus dolores laborum aliquid suscipit in rerum ratione ipsam necessitatibus! Exercitationem deleniti pariatur fugit doloribus voluptatibus, eveniet impedit velit ratione? Maiores fuga dolores sapiente voluptatum ea esse debitis consectetur praesentium reiciendis quam. Corrupti, exercitationem quibusdam maxime architecto similique dolore laudantium voluptatem!</p>
+</div>
+<div></div>
+</div>
+</body>
+<script>
+    var a = document.getElementById('re').textContent;
+    var announcements = ['Examination Schedule for Msc and BE full time','CIT taking first place in the hackathon at the finathon took place in IIT-DELHI','3rd Semester exam fees','3rd Semester Exam Schedule'];
+    var counter = 0;
+
+    function updateContent() {
+        var container = document.querySelector('.announcement-container');
+        container.style.transform = 'translateX(100%)';
+
+        setTimeout(function () {
+            document.getElementById('re').innerHTML = announcements[counter];
+            container.style.transform = 'translateX(0)';
+            counter = (counter + 1) % announcements.length;
+        }, 500);
+    }
+
+    var intervalId = setInterval(updateContent, 3000);
+    var overlay = document.querySelector('.overlay')
+    var popupbox = document.querySelector('.popupbox')
+    var nav = document.getElementById('navv')
+    var color = document.getElementById('color')
+    var abt = document.getElementById('abt')
+    function log(){
+        overlay.style.display='block';
+        popupbox.style.display='block';
+        nav.style.display='none'; 
+        color.style.display='none';
+        abt.style.display='none';  
+    }
+</script>
+</html>
