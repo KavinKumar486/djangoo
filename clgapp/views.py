@@ -1,6 +1,7 @@
 from django.shortcuts import render,HttpResponse,redirect,get_object_or_404
-
-
+def index(request):
+    return HttpResponse('kini')
+'''
 from .models import Stu,Adminsss,Teacher,Tadmin,Attendence,Tadmin
 
 
@@ -224,3 +225,4 @@ def teacherauth(request):
         else:
             return render(request,'teeacheractions.html')
     return render(request,'teacherlogin.html')
+'''

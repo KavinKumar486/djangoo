@@ -1,9 +1,13 @@
 from django.urls import path,include
 from . import views
-
+urlpatterns=[
+    path('',views.index)
+]
+'''
 urlpatterns=[
    
     path('',views.landin),
+
     path('show/',views.add,name='add'),
     path('insert/',views.insert,name='insert'),
     path('index/',views.index,name='index'),
@@ -31,3 +35,4 @@ urlpatterns=[
     
 
 ]
+'''

@@ -1,5 +1,5 @@
 from django.db import models
-
+'''
 class Stu(models.Model):
     name = models.CharField(max_length=200)
     reg = models.IntegerField()
@@ -49,19 +49,9 @@ class Attendence(models.Model):
     sub8 = models.IntegerField()
     class Meta:
         db_table = 'attendence'
-'''
-class Attendence_percentage(models.Model):
-    p_sub1 = models.FloatField()
-    p_sub2 = models.FloatField()
-    p_sub3 = models.FloatField()
-    p_sub4 = models.FloatField()
-    p_sub5 = models.FloatField()
-    p_sub6 = models.FloatField()
-    p_sub7 = models.FloatField()
-    p_sub8 = models.FloatField()
-    class Meta:
-        db_table = 'attendence_percentage'
-'''
+
+
+
 from django.db import models
 
 class Attendence(models.Model):
@@ -79,3 +69,4 @@ class Attendence(models.Model):
     class Meta:
         db_table = 'attendence'
 
+'''
